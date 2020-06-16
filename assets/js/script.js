@@ -7,7 +7,7 @@ function searchForMovies() {
 	}
 
 	const Http = new XMLHttpRequest();
-	const url=`http://www.omdbapi.com/?s=${title}&apikey=27761297`;
+	const url=`https://www.omdbapi.com/?s=${title}&apikey=27761297`;
 	Http.open("GET", url);
 	Http.send();
 
