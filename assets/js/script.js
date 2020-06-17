@@ -60,6 +60,12 @@ function displayError(errorMessage) {
 
 /*add Enter key event listener for movie title input*/
 window.onload = function() {
+	for ( let i = 0; i<localStorage.length; i++ ) {
+		const favoriteDiv=document.createElement("div");
+		favoriteDiv.innerText=localStorage.getItem(localStorage.key(i))
+		document.body.append(favoriteDiv)
+		console.log( localStorage.getItem( localStorage.key( i ) ) );
+	  }
 	document.getElementById('movie-title').addEventListener('keypress', function (e) {
 	    if (e.key === 'Enter') {
 	      searchForMovies();
@@ -68,7 +74,7 @@ window.onload = function() {
 }
 
 function addMovieToFavorites(movieObject) {
-	/*TODO implement this function using local storage to store and retrieve data*/
-	console.log(movieObject);
-	alert("TODO add movies to favorites with info printed in console log ");
+	localStorage.setItem(movieObject.Title, "favorite")
+	
+	
 }
